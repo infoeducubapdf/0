@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>InfoEduCubaPDF | Guías Freelance desde Cuba</title>
+    <meta name="description" content="Guías y recursos para generar ingresos por internet desde Cuba. Freelance, plataformas y métodos de pago adaptados a la realidad cubana.">
+    
+    <!-- Fuentes modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== RESET Y VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg: #0a0a0f;
+            --surface: #1a1a24;
+            --surface-light: #252532;
+            --primary: #00f0ff;
+            --secondary: #ff00aa;
+            --text: #e0e0e0;
+            --text-dim: #a0a0b0;
+            --border: rgba(0, 240, 255, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== TIPOGRAFÍA ===== */
+        h1, h2, h3, .logo, .btn {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* ===== HEADER ===== */
+        header {
+            background: var(--surface);
+            padding: 25px 0;
+            border-bottom: 3px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        }
+        
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(0,240,255,0.1), transparent 50%);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.7);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+        
+        /* ===== BOTONES ===== */
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+        }
+        
+        /* ===== SECCIONES ===== */
+        section {
+            padding: 80px 20px;
+        }
+        
+        section:nth-child(even) {
+            background: var(--surface-light);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+        
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        /* ===== GRID DE TARJETAS ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .card {
+            background: var(--surface);
+            padding: 30px 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.15);
+        }
+        
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .card h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+        
+        .card-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+        
+        .card-link:hover {
+            color: var(--secondary);
+        }
+        
+        /* ===== TABLA RESPONSIVE ===== */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 16px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+            min-width: 500px;
+        }
+        
+        th {
+            background: var(--primary);
+            color: var(--bg);
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        td a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        td a:hover {
+            color: var(--secondary);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--surface);
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 2px solid var(--primary);
+            margin-top: 40px;
+        }
+        
+        footer p {
+            color: var(--text-dim);
+            margin-bottom: 10px;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* ===== UTILIDADES ===== */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-4 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">InfoEduCubaPDF</div>
+        </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hola, soy <span>Andy Victor Góngora Olivarez</span></h1>
+            <p>Bienvenidos a InfoEduCubaPDF, donde encontrarás información real para ganar dinero por internet desde Cuba. No es hacerse rico, pero sí mejorar tu economía.</p>
+            <a href="#guias" class="btn">Explorar guías →</a>
+        </div>
+    </section>
+    
+    <!-- GUÍAS FREELANCE -->
+    <section id="guias">
+        <div class="container">
+            <h2>📚 Guías Freelance</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-icon">💼</span>
+                    <h3>Freelance General</h3>
+                    <p>Todo lo que necesitas saber para empezar desde cero en 2026</p>
+                    <a href="#" class="card-link">Ver guía →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">✍️</span>
+                    <h3>Redacción</h3>
+                    <p>Artículos, blogs, traducción. Ganancias: $15-60</p>
+                    <a href="#" class="card-link">Ver guía →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🎨</span>
+                    <h3>Diseño</h3>
+                    <p>Logos, redes sociales, video. Ganancias: $25-120</p>
+                    <a href="#" class="card-link">Ver guía →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">💻</span>
+                    <h3>Programación</h3>
+                    <p>Web, WordPress, JavaScript. Ganancias: $25-120/h</p>
+                    <a href="#" class="card-link">Ver guía →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📱</span>
+                    <h3>Community Manager</h3>
+                    <p>Redes sociales para marcas. Ganancias: $60-400/mes</p>
+                    <a href="#" class="card-link">Ver guía →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📚</span>
+                    <h3>Tutorías Online</h3>
+                    <p>Clases particulares. Ganancias: $10-30/h</p>
+                    <a href="#" class="card-link">Ver guía →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PLATAFORMAS -->
+    <section>
+        <div class="container">
+            <h2>🌐 Plataformas que funcionan</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plataforma</th>
+                            <th>Tipo</th>
+                            <th>Enlace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nexempleo</strong></td>
+                            <td>Freelance general</td>
+                            <td><a href="https://www.nexempleo.com" target="_blank">nexempleo.com →</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CubaJobs</strong></td>
+                            <td>Bolsa de empleo remoto</td>
+                            <td><a href="https://cubajobs.net" target="_blank">cubajobs.net →</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Workana</strong></td>
+                            <td>Freelance Latinoamérica</td>
+                            <td><a href="https://www.workana.com" target="_blank">workana.com →</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LinkedIn</strong></td>
+                            <td>Red profesional</td>
+                            <td><a href="https://www.linkedin.com" target="_blank">linkedin.com →</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Airtm</strong></td>
+                            <td>Plataforma de pagos</td>
+                            <td><a href="https://www.airtm.io" target="_blank">airtm.io →</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center mt-4">
+                <p style="color: var(--text-dim);">⚠️ Upwork y Fiverr requieren VPN</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MÉTODOS DE PAGO -->
+    <section id="pagos">
+        <div class="container">
+            <h2>💰 Métodos de Pago</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-icon">💰</span>
+                    <h3>Tropipay</h3>
+                    <p>Recibe pagos directo a tu tarjeta Magna</p>
+                    <a href="https://www.tropipay.com" target="_blank" class="card-link">tropipay.com →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">₿</span>
+                    <h3>QvaPay</h3>
+                    <p>Criptomonedas desde Cuba</p>
+                    <a href="https://qvapay.com" target="_blank" class="card-link">qvapay.com →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">💳</span>
+                    <h3>Airtm</h3>
+                    <p>Plataforma de pagos digitales</p>
+                    <a href="https://www.airtm.io" target="_blank" class="card-link">airtm.io →</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🤝</span>
+                    <h3>Intermediarios</h3>
+                    <p>Familiares en el exterior</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🏦</span>
+                    <h3>Binance P2P</h3>
+                    <p>Compra y vende cripto</p>
+                    <a href="https://www.binance.com" target="_blank" class="card-link">binance.com →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- GUÍAS PDF -->
+    <section>
+        <div class="container">
+            <h2>📥 Guías PDF</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card">
+                    <span class="card-icon">📘</span>
+                    <h3>Guía de Inicio</h3>
+                    <p>Primeros pasos en el freelance</p>
+                    <a href="#" class="card-link">Próximamente</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📗</span>
+                    <h3>Métodos de Pago</h3>
+                    <p>Tropipay, QvaPay, Airtm explicados</p>
+                    <a href="#" class="card-link">Próximamente</a>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📙</span>
+                    <h3>Plataformas</h3>
+                    <p>Guía de registro paso a paso</p>
+                    <a href="#" class="card-link">Próximamente</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 20px;">InfoEduCubaPDF</p>
+            <p>Creado por Andy Victor Góngora Olivarez</p>
+            <p>© 2026 InfoEduCubaPDF - Todos los derechos reservados</p>
+            <p style="margin-top: 20px; color: var(--primary);">🇨🇺 Información real para cubanos que quieren mejorar su economía 🇨🇺</p>
+            <div class="footer-links">
+                <a href="#">Inicio</a>
+                <a href="#guias">Guías</a>
+                <a href="#pagos">Pagos</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
