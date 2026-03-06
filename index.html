@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Typed.js para efecto de escritura -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
     <style>
         * {
             margin: 0;
@@ -35,6 +41,8 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><path d="M10 10 L90 10 L50 90 Z" fill="%2300f0ff"/><circle cx="20" cy="80" r="5" fill="%23ff00aa"/><circle cx="80" cy="30" r="5" fill="%2300f0ff"/></svg>');
+            background-repeat: repeat;
         }
         
         .container {
@@ -49,7 +57,30 @@
             font-weight: 600;
         }
         
-        /* Header */
+        /* ===== ANIMACIONES ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .delay-4 { animation-delay: 0.8s; opacity: 0; }
+        .delay-5 { animation-delay: 1.0s; opacity: 0; }
+        .delay-6 { animation-delay: 1.2s; opacity: 0; }
+        
+        /* ===== HEADER ===== */
         header {
             background: var(--surface);
             padding: 25px 0;
@@ -75,7 +106,7 @@
             }
         }
         
-        /* Hero */
+        /* ===== HERO ===== */
         .hero {
             padding: 80px 20px;
             text-align: center;
@@ -107,7 +138,13 @@
             }
         }
         
-        /* Botones generales */
+        /* ===== BOTONES ===== */
+        .btn, .btn-cursos {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
         .btn {
             display: inline-block;
             padding: 14px 40px;
@@ -117,7 +154,6 @@
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
@@ -128,7 +164,6 @@
             box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
         }
         
-        /* Botón especial para cursos */
         .btn-cursos {
             display: inline-block;
             padding: 18px 60px;
@@ -138,7 +173,6 @@
             border-radius: 50px;
             font-weight: 700;
             font-size: 1.3rem;
-            transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid var(--primary);
             box-shadow: 0 0 30px rgba(255, 0, 170, 0.3);
             letter-spacing: 1px;
@@ -150,7 +184,7 @@
             border-color: var(--secondary);
         }
         
-        /* Secciones */
+        /* ===== SECCIONES ===== */
         section {
             padding: 80px 20px;
         }
@@ -173,7 +207,7 @@
             }
         }
         
-        /* Grid de tarjetas */
+        /* ===== GRID DE TARJETAS ===== */
         .grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -199,20 +233,44 @@
             padding: 30px 25px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 0; /* Se activará con la animación */
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .card:hover::before {
+            left: 100%;
         }
         
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px) scale(1.02);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.3), 0 0 0 2px rgba(0, 240, 255, 0.1);
         }
         
         .card-icon {
             font-size: 3.5rem;
             margin-bottom: 15px;
             display: block;
+        }
+        
+        .card i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
         .card h3 {
@@ -238,7 +296,42 @@
             color: var(--secondary);
         }
         
-        /* Tabla responsive */
+        /* ===== ESTADÍSTICAS ===== */
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            min-width: 100px;
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+        
+        /* ===== TABLA RESPONSIVE ===== */
         .table-responsive {
             overflow-x: auto;
             margin: 40px 0;
@@ -275,7 +368,7 @@
             color: var(--secondary);
         }
         
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
             background: var(--surface);
             padding: 50px 0 30px;
@@ -303,6 +396,31 @@
             color: var(--secondary);
         }
         
+        /* ===== BOTÓN VOLVER ARRIBA ===== */
+        .btn-arriba {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--bg);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 999;
+        }
+        
+        .btn-arriba:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 0, 170, 0.6);
+        }
+        
+        /* ===== UTILIDADES ===== */
         .text-center {
             text-align: center;
         }
@@ -327,56 +445,76 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">InfoEduCubaPDF</div>
+            <div class="logo animate-fade">InfoEduCubaPDF</div>
         </div>
     </header>
     
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <h1>Hola, soy <span>Andy Victor Góngora Olivarez</span></h1>
-            <p>Bienvenidos a InfoEduCubaPDF, donde encontrarás información real para ganar dinero por internet desde Cuba. No es hacerse rico, pero sí mejorar tu economía.</p>
-            <a href="#guias" class="btn">Explorar guías →</a>
+            <h1 class="animate-fade">Hola, soy <span id="typed-text"></span></h1>
+            <p class="animate-fade delay-1">Bienvenidos a InfoEduCubaPDF, donde encontrarás información real para ganar dinero por internet desde Cuba. No es hacerse rico, pero sí mejorar tu economía.</p>
+            <a href="#guias" class="btn animate-fade delay-2">Explorar guías →</a>
+        </div>
+    </section>
+    
+    <!-- ESTADÍSTICAS -->
+    <section style="padding: 40px 20px;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-fade delay-1">
+                    <span class="stat-number" id="stat-guias">0</span>
+                    <span class="stat-label">Guías</span>
+                </div>
+                <div class="stat-item animate-fade delay-2">
+                    <span class="stat-number" id="stat-cursos">0</span>
+                    <span class="stat-label">Cursos</span>
+                </div>
+                <div class="stat-item animate-fade delay-3">
+                    <span class="stat-number" id="stat-plataformas">0</span>
+                    <span class="stat-label">Plataformas</span>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- GUÍAS FREELANCE -->
     <section id="guias">
         <div class="container">
-            <h2>📚 Guías Freelance</h2>
+            <h2 class="animate-fade">📚 Guías Freelance</h2>
             <div class="grid">
-                <div class="card">
-                    <span class="card-icon">💼</span>
+                <div class="card animate-fade delay-1">
+                    <i class="fas fa-briefcase"></i>
                     <h3>Freelance General</h3>
                     <p>Todo lo que necesitas saber para empezar desde cero en 2026</p>
                     <a href="/0/freelance-general.html" class="card-link">Ver guía →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">✍️</span>
+                <div class="card animate-fade delay-2">
+                    <i class="fas fa-pen-fancy"></i>
                     <h3>Redacción</h3>
                     <p>Artículos, blogs, traducción. Ganancias: $15-60</p>
                     <a href="/0/redaccion.html" class="card-link">Ver guía →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">🎨</span>
+                <div class="card animate-fade delay-3">
+                    <i class="fas fa-paint-brush"></i>
                     <h3>Diseño</h3>
                     <p>Logos, redes sociales, video. Ganancias: $25-120</p>
                     <a href="/0/diseno.html" class="card-link">Ver guía →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">💻</span>
+                <div class="card animate-fade delay-4">
+                    <i class="fas fa-code"></i>
                     <h3>Programación</h3>
                     <p>Web, WordPress, JavaScript. Ganancias: $25-120/h</p>
                     <a href="/0/programacion.html" class="card-link">Ver guía →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">📱</span>
+                <div class="card animate-fade delay-5">
+                    <i class="fas fa-hashtag"></i>
                     <h3>Community Manager</h3>
                     <p>Redes sociales para marcas. Ganancias: $60-400/mes</p>
                     <a href="/0/community-manager.html" class="card-link">Ver guía →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">📚</span>
+                <div class="card animate-fade delay-6">
+                    <i class="fas fa-chalkboard-teacher"></i>
                     <h3>Tutorías Online</h3>
                     <p>Clases particulares. Ganancias: $10-30/h</p>
                     <a href="/0/tutorias.html" class="card-link">Ver guía →</a>
@@ -386,26 +524,24 @@
             <!-- SEPARADOR VISUAL -->
             <div class="separador"></div>
             
-            <!-- BOTÓN DE CURSOS (ARRIBA DE PLATAFORMAS) -->
+            <!-- BOTÓN DE CURSOS -->
             <div class="text-center">
                 <h2 style="font-size: 2rem; margin-bottom: 20px;">🎓 ¿Quieres aprender paso a paso?</h2>
                 <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem;">
                     Accede a nuestros cursos gratuitos, diseñados especialmente para la realidad cubana.
                 </p>
-                <a href="/0/cursos.html" class="btn-cursos">Ver todos los cursos →</a>
+                <a href="/0/cursos.html" class="btn-cursos animate-fade delay-1">Ver todos los cursos →</a>
             </div>
             
-            <!-- SEPARADOR VISUAL -->
             <div class="separador"></div>
-            
         </div>
     </section>
     
     <!-- PLATAFORMAS -->
     <section>
         <div class="container">
-            <h2>🌐 Plataformas que funcionan</h2>
-            <div class="table-responsive">
+            <h2 class="animate-fade">🌐 Plataformas que funcionan</h2>
+            <div class="table-responsive animate-fade delay-1">
                 <table>
                     <thead>
                         <tr>
@@ -443,7 +579,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="text-center mt-4">
+            <div class="text-center mt-4 animate-fade delay-2">
                 <p style="color: var(--text-dim);">⚠️ Upwork y Fiverr requieren VPN</p>
             </div>
         </div>
@@ -452,33 +588,33 @@
     <!-- MÉTODOS DE PAGO -->
     <section id="pagos">
         <div class="container">
-            <h2>💰 Métodos de Pago</h2>
+            <h2 class="animate-fade">💰 Métodos de Pago</h2>
             <div class="grid">
-                <div class="card">
-                    <span class="card-icon">💰</span>
+                <div class="card animate-fade delay-1">
+                    <i class="fas fa-coins"></i>
                     <h3>Tropipay</h3>
                     <p>Recibe pagos directo a tu tarjeta Magna</p>
                     <a href="https://www.tropipay.com" target="_blank" class="card-link">tropipay.com →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">₿</span>
+                <div class="card animate-fade delay-2">
+                    <i class="fab fa-bitcoin"></i>
                     <h3>QvaPay</h3>
                     <p>Criptomonedas desde Cuba</p>
                     <a href="https://qvapay.com" target="_blank" class="card-link">qvapay.com →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">💳</span>
+                <div class="card animate-fade delay-3">
+                    <i class="fas fa-credit-card"></i>
                     <h3>Airtm</h3>
                     <p>Plataforma de pagos digitales</p>
                     <a href="https://www.airtm.io" target="_blank" class="card-link">airtm.io →</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">🤝</span>
+                <div class="card animate-fade delay-4">
+                    <i class="fas fa-handshake"></i>
                     <h3>Intermediarios</h3>
                     <p>Familiares en el exterior</p>
                 </div>
-                <div class="card">
-                    <span class="card-icon">🏦</span>
+                <div class="card animate-fade delay-5">
+                    <i class="fas fa-university"></i>
                     <h3>Binance P2P</h3>
                     <p>Compra y vende cripto</p>
                     <a href="https://www.binance.com" target="_blank" class="card-link">binance.com →</a>
@@ -490,22 +626,22 @@
     <!-- GUÍAS PDF -->
     <section>
         <div class="container">
-            <h2>📥 Guías PDF</h2>
+            <h2 class="animate-fade">📥 Guías PDF</h2>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="card">
-                    <span class="card-icon">📘</span>
+                <div class="card animate-fade delay-1">
+                    <i class="fas fa-file-pdf" style="color: #ff00aa;"></i>
                     <h3>Guía de Inicio</h3>
                     <p>Primeros pasos en el freelance</p>
                     <a href="#" class="card-link">Próximamente</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">📗</span>
+                <div class="card animate-fade delay-2">
+                    <i class="fas fa-file-pdf" style="color: #ff00aa;"></i>
                     <h3>Métodos de Pago</h3>
                     <p>Tropipay, QvaPay, Airtm explicados</p>
                     <a href="#" class="card-link">Próximamente</a>
                 </div>
-                <div class="card">
-                    <span class="card-icon">📙</span>
+                <div class="card animate-fade delay-3">
+                    <i class="fas fa-file-pdf" style="color: #ff00aa;"></i>
                     <h3>Plataformas</h3>
                     <p>Guía de registro paso a paso</p>
                     <a href="#" class="card-link">Próximamente</a>
@@ -522,11 +658,106 @@
             <p>© 2026 InfoEduCubaPDF - Todos los derechos reservados</p>
             <p style="margin-top: 20px; color: var(--primary);">🇨🇺 Información real para cubanos que quieren mejorar su economía 🇨🇺</p>
             <div class="footer-links">
-                <a href="#inicio">Inicio</a>
+                <a href="#">Inicio</a>
                 <a href="#guias">Guías</a>
                 <a href="#pagos">Pagos</a>
             </div>
         </div>
     </footer>
+    
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="btn-arriba" class="btn-arriba" title="Volver arriba">↑</button>
+    
+    <!-- SCRIPTS -->
+    <script>
+        // Efecto de escritura
+        var typed = new Typed('#typed-text', {
+            strings: ['Andy Victor Góngora Olivarez', 'tu guía freelance', 'InfoEduCubaPDF'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+        
+        // Contadores
+        function animateCounter(elementId, target, duration) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                start += increment;
+                element.innerText = Math.min(Math.floor(start), target);
+                
+                if (start >= target) {
+                    element.innerText = target;
+                    clearInterval(timer);
+                }
+            }, 16);
+        }
+        
+        // Iniciar contadores cuando la página cargue
+        window.addEventListener('load', function() {
+            animateCounter('stat-guias', 12, 2000);
+            animateCounter('stat-cursos', 18, 2000);
+            animateCounter('stat-plataformas', 8, 2000);
+        });
+        
+        // Botón volver arriba
+        window.onscroll = function() {
+            const btn = document.getElementById('btn-arriba');
+            if (document.documentElement.scrollTop > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+        
+        document.getElementById('btn-arriba').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Efecto de onda en botones
+        document.querySelectorAll('.btn, .btn-cursos, .card-link').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.offsetLeft;
+                const y = e.clientY - e.target.offsetTop;
+                
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255,255,255,0.5)';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+    
+    <style>
+        /* Animación para el efecto de onda */
+        @keyframes ripple {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.5;
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+    </style>
 </body>
 </html>
