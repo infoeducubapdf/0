@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Gratis - InfoEduCubaPDF</title>
+    <meta name="description" content="Cursos gratis para aprender freelance, redacción, diseño, programación y más desde Cuba.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg: #0a0a0f;
+            --surface: #1a1a24;
+            --surface-light: #252532;
+            --primary: #00f0ff;
+            --secondary: #ff00aa;
+            --text: #e0e0e0;
+            --text-dim: #a0a0b0;
+            --border: rgba(0, 240, 255, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--surface);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .back-link a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .back-link a:hover {
+            color: var(--secondary);
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .subtitulo {
+            text-align: center;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.2rem;
+        }
+        
+        /* Categorías */
+        .categoria {
+            margin-bottom: 60px;
+        }
+        
+        .categoria-titulo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        
+        .categoria-titulo h2 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .categoria-titulo span {
+            font-size: 2.5rem;
+        }
+        
+        .cursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .curso-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .curso-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+        }
+        
+        .curso-card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .curso-card p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .curso-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .curso-link:hover {
+            color: var(--secondary);
+        }
+        
+        .btn-volver {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 40px 0;
+        }
+        
+        footer {
+            background: var(--surface);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--primary);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/0/index.html">InfoEduCubaPDF</a>
+                </div>
+                <div class="back-link">
+                    <a href="/0/index.html">← Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <h1>🎓 Cursos Gratis</h1>
+        <p class="subtitulo">Aprende desde cero con nuestros cursos completamente gratis, diseñados para la realidad cubana.</p>
+        
+        <!-- CATEGORÍA: FREELANCE GENERAL -->
+        <section class="categoria">
+            <div class="categoria-titulo">
+                <span>💼</span>
+                <h2>Freelance General</h2>
+            </div>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <h3>Fundamentos del Freelance</h3>
+                    <p>Aprende qué es el freelance, cómo empezar y las claves del éxito desde Cuba.</p>
+                    <a href="/0/curso-freelance-fundamentos.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Cómo encontrar clientes</h3>
+                    <p>Estrategias para conseguir tus primeros clientes y plataformas que funcionan.</p>
+                    <a href="/0/curso-freelance-clientes.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Negociación y cobros</h3>
+                    <p>Cómo negociar tarifas y recibir pagos desde Cuba sin complicaciones.</p>
+                    <a href="/0/curso-freelance-pagos.html" class="curso-link">Ver curso →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CATEGORÍA: REDACCIÓN -->
+        <section class="categoria">
+            <div class="categoria-titulo">
+                <span>✍️</span>
+                <h2>Redacción</h2>
+            </div>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <h3>Redacción para blogs</h3>
+                    <p>Aprende a escribir artículos atractivos y bien estructurados para blogs.</p>
+                    <a href="/0/curso-redaccion-blogs.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Copywriting básico</h3>
+                    <p>Escribe textos que vendan: principios de copywriting para principiantes.</p>
+                    <a href="/0/curso-redaccion-copy.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Traducción inglés-español</h3>
+                    <p>Consejos para empezar a traducir y ganar dinero con tus conocimientos de inglés.</p>
+                    <a href="/0/curso-redaccion-traduccion.html" class="curso-link">Ver curso →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CATEGORÍA: DISEÑO -->
+        <section class="categoria">
+            <div class="categoria-titulo">
+                <span>🎨</span>
+                <h2>Diseño</h2>
+            </div>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <h3>Canva desde cero</h3>
+                    <p>Domina Canva para crear diseños profesionales sin experiencia previa.</p>
+                    <a href="/0/curso-diseno-canva.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Edición de video básica</h3>
+                    <p>Aprende a editar videos con herramientas gratuitas como CapCut o DaVinci Resolve.</p>
+                    <a href="/0/curso-diseno-video.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Diseño de logos</h3>
+                    <p>Crea logos impactantes para clientes usando herramientas online.</p>
+                    <a href="/0/curso-diseno-logos.html" class="curso-link">Ver curso →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CATEGORÍA: PROGRAMACIÓN -->
+        <section class="categoria">
+            <div class="categoria-titulo">
+                <span>💻</span>
+                <h2>Programación</h2>
+            </div>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <h3>HTML y CSS para principiantes</h3>
+                    <p>Crea tus primeras páginas web con HTML y CSS desde cero.</p>
+                    <a href="/0/curso-prog-html-css.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>JavaScript básico</h3>
+                    <p>Introducción a la programación con JavaScript: variables, funciones y eventos.</p>
+                    <a href="/0/curso-prog-javascript.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>WordPress para freelancers</h3>
+                    <p>Aprende a crear páginas web con WordPress, el CMS más usado.</p>
+                    <a href="/0/curso-prog-wordpress.html" class="curso-link">Ver curso →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CATEGORÍA: COMMUNITY MANAGER -->
+        <section class="categoria">
+            <div class="categoria-titulo">
+                <span>📱</span>
+                <h2>Community Manager</h2>
+            </div>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <h3>Gestión de Instagram</h3>
+                    <p>Aprende a manejar cuentas de Instagram: contenido, stories y reels.</p>
+                    <a href="/0/curso-cm-instagram.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Creación de contenido</h3>
+                    <p>Crea contenido atractivo para redes sociales que enganche a la audiencia.</p>
+                    <a href="/0/curso-cm-contenido.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Métricas y análisis</h3>
+                    <p>Aprende a medir el éxito de tus publicaciones y mejorar la estrategia.</p>
+                    <a href="/0/curso-cm-metricas.html" class="curso-link">Ver curso →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CATEGORÍA: TUTORÍAS ONLINE -->
+        <section class="categoria">
+            <div class="categoria-titulo">
+                <span>📚</span>
+                <h2>Tutorías Online</h2>
+            </div>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <h3>Cómo dar clases online</h3>
+                    <p>Prepara tus primeras clases virtuales: herramientas y metodología.</p>
+                    <a href="/0/curso-tuto-clases.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Plataformas para tutores</h3>
+                    <p>Regístrate en Italki, Preply y otras plataformas para conseguir alumnos.</p>
+                    <a href="/0/curso-tuto-plataformas.html" class="curso-link">Ver curso →</a>
+                </div>
+                <div class="curso-card">
+                    <h3>Material didáctico</h3>
+                    <p>Crea materiales efectivos para tus clases y destaca como tutor.</p>
+                    <a href="/0/curso-tuto-material.html" class="curso-link">Ver curso →</a>
+                </div>
+            </div>
+        </section>
+        
+        <div style="text-align: center;">
+            <a href="/0/index.html" class="btn-volver">← Volver al inicio</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 InfoEduCubaPDF - Creado por Andy Victor Góngora Olivarez 🇨🇺</p>
+        </div>
+    </footer>
+</body>
+</html>
