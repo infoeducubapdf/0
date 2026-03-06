@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos del Freelance - InfoEduCubaPDF</title>
+    <meta name="description" content="Curso gratis de fundamentos del freelance desde Cuba: aprende los conceptos básicos para empezar.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg: #0a0a0f;
+            --surface: #1a1a24;
+            --primary: #00f0ff;
+            --secondary: #ff00aa;
+            --text: #e0e0e0;
+            --text-dim: #a0a0b0;
+            --border: rgba(0, 240, 255, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--surface);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .back-link a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .back-link a:hover {
+            color: var(--secondary);
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin: 40px 0 20px;
+        }
+        
+        .curso-content {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin: 30px 0;
+        }
+        
+        .modulo {
+            background: rgba(0, 240, 255, 0.05);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+        }
+        
+        .modulo h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .modulo ul {
+            margin-left: 20px;
+            color: var(--text-dim);
+        }
+        
+        .modulo li {
+            margin-bottom: 8px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background: var(--surface);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--primary);
+            margin-top: 60px;
+        }
+        
+        .progreso {
+            background: rgba(0, 240, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        
+        .progreso p {
+            color: var(--primary);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/0/index.html">InfoEduCubaPDF</a>
+                </div>
+                <div class="back-link">
+                    <a href="/0/cursos.html">← Volver a cursos</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <h1>Fundamentos del Freelance</h1>
+        
+        <div class="progreso">
+            <p>📌 Curso en desarrollo - Contenido básico disponible</p>
+        </div>
+        
+        <div class="curso-content">
+            <div class="modulo">
+                <h2>📌 Módulo 1: Introducción al Freelance</h2>
+                <ul>
+                    <li>Lección 1: ¿Qué es ser freelancer?</li>
+                    <li>Lección 2: Ventajas del trabajo independiente</li>
+                    <li>Lección 3: Desafíos comunes y cómo superarlos</li>
+                    <li>Lección 4: Mitos sobre el trabajo freelance</li>
+                </ul>
+            </div>
+            
+            <div class="modulo">
+                <h2>📌 Módulo 2: Habilidades y herramientas</h2>
+                <ul>
+                    <li>Lección 5: Habilidades más demandadas</li>
+                    <li>Lección 6: Cómo identificar tu nicho</li>
+                    <li>Lección 7: Herramientas básicas para empezar</li>
+                    <li>Lección 8: Recursos gratuitos para aprender</li>
+                </ul>
+            </div>
+            
+            <div class="modulo">
+                <h2>📌 Módulo 3: Plataformas y clientes</h2>
+                <ul>
+                    <li>Lección 9: Plataformas que funcionan desde Cuba</li>
+                    <li>Lección 10: Cómo crear un perfil atractivo</li>
+                    <li>Lección 11: Estrategias para conseguir tus primeros clientes</li>
+                    <li>Lección 12: Cómo presentar propuestas ganadoras</li>
+                </ul>
+            </div>
+            
+            <div class="modulo">
+                <h2>📌 Módulo 4: Cobros y pagos</h2>
+                <ul>
+                    <li>Lección 13: Métodos de pago para cubanos</li>
+                    <li>Lección 14: Cómo usar Tropipay paso a paso</li>
+                    <li>Lección 15: Introducción a QvaPay y Airtm</li>
+                    <li>Lección 16: Consejos para negociar tarifas</li>
+                </ul>
+            </div>
+            
+            <div class="modulo">
+                <h2>📌 Módulo 5: Crecimiento y especialización</h2>
+                <ul>
+                    <li>Lección 17: Cómo fidelizar clientes</li>
+                    <li>Lección 18: Estrategias para aumentar tus tarifas</li>
+                    <li>Lección 19: Especialización vs. diversificación</li>
+                    <li>Lección 20: Próximos pasos en tu carrera freelance</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="/0/cursos.html" class="btn">← Volver a cursos</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 InfoEduCubaPDF - Creado por Andy Victor Góngora Olivarez 🇨🇺</p>
+        </div>
+    </footer>
+</body>
+</html>
