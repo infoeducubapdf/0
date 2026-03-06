@@ -44,7 +44,7 @@
             padding: 0 20px;
         }
         
-        h1, h2, h3, .logo, .btn {
+        h1, h2, h3, .logo, .btn, .btn-cursos {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
         }
@@ -107,7 +107,7 @@
             }
         }
         
-        /* Botones */
+        /* Botones generales */
         .btn {
             display: inline-block;
             padding: 14px 40px;
@@ -126,6 +126,28 @@
         .btn:hover {
             transform: scale(1.05);
             box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+        }
+        
+        /* Botón especial para cursos */
+        .btn-cursos {
+            display: inline-block;
+            padding: 18px 60px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 30px rgba(255, 0, 170, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .btn-cursos:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 0, 170, 0.6);
+            border-color: var(--secondary);
         }
         
         /* Secciones */
@@ -288,6 +310,18 @@
         .mt-4 {
             margin-top: 40px;
         }
+        
+        .mb-4 {
+            margin-bottom: 40px;
+        }
+        
+        .separador {
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+            margin: 40px auto;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
@@ -348,6 +382,22 @@
                     <a href="/0/tutorias.html" class="card-link">Ver guía →</a>
                 </div>
             </div>
+            
+            <!-- SEPARADOR VISUAL -->
+            <div class="separador"></div>
+            
+            <!-- BOTÓN DE CURSOS (ARRIBA DE PLATAFORMAS) -->
+            <div class="text-center">
+                <h2 style="font-size: 2rem; margin-bottom: 20px;">🎓 ¿Quieres aprender paso a paso?</h2>
+                <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem;">
+                    Accede a nuestros cursos gratuitos, diseñados especialmente para la realidad cubana.
+                </p>
+                <a href="/0/cursos.html" class="btn-cursos">Ver todos los cursos →</a>
+            </div>
+            
+            <!-- SEPARADOR VISUAL -->
+            <div class="separador"></div>
+            
         </div>
     </section>
     
