@@ -61,39 +61,34 @@
             font-weight: 600;
         }
         
-        /* ===== LOGO CON COLORES PERSONALIZADOS ===== */
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
+        /* ===== HEADER CON LOGO ===== */
+        header {
+            background: var(--surface);
+            padding: 20px 0;
+            border-bottom: 3px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
         
-        .logo-info {
-            color: var(--white);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .logo-edu {
-            color: var(--blue);
-            text-shadow: 0 0 10px rgba(0, 42, 143, 0.5);
-        }
-        
-        .logo-cuba {
-            color: var(--red);
-            text-shadow: 0 0 10px rgba(207, 20, 43, 0.5);
-        }
-        
-        .logo-pdf {
-            color: var(--green);
-            text-shadow: 0 0 10px rgba(0, 177, 106, 0.5);
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px; /* Ajusta según el tamaño de tu logo */
+            width: auto;
+            object-fit: contain;
         }
         
         @media (min-width: 768px) {
-            .logo {
-                font-size: 3rem;
+            .logo-img {
+                max-height: 100px;
             }
         }
         
@@ -119,17 +114,6 @@
         .delay-4 { animation-delay: 0.8s; opacity: 0; }
         .delay-5 { animation-delay: 1.0s; opacity: 0; }
         .delay-6 { animation-delay: 1.2s; opacity: 0; }
-        
-        /* ===== HEADER ===== */
-        header {
-            background: var(--surface);
-            padding: 25px 0;
-            border-bottom: 3px solid var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
         
         /* ===== HERO ===== */
         .hero {
@@ -398,6 +382,12 @@
             margin-top: 40px;
         }
         
+        .footer-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
         footer p {
             color: var(--text-dim);
             margin-bottom: 10px;
@@ -466,12 +456,9 @@
 <body>
     <header>
         <div class="container">
-            <!-- LOGO CON COLORES PERSONALIZADOS -->
-            <div class="logo animate-fade">
-                <span class="logo-info">Info</span>
-                <span class="logo-edu">Edu</span>
-                <span class="logo-cuba">Cuba</span>
-                <span class="logo-pdf">PDF</span>
+            <div class="logo-container animate-fade">
+                <!-- LOGO EN IMAGEN -->
+                <img src="/0/logoinfoeducubapdf.png" alt="InfoEduCubaPDF" class="logo-img">
             </div>
         </div>
     </header>
@@ -680,12 +667,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="logo" style="font-size: 1.5rem; margin-bottom: 20px;">
-                <span class="logo-info">Info</span>
-                <span class="logo-edu">Edu</span>
-                <span class="logo-cuba">Cuba</span>
-                <span class="logo-pdf">PDF</span>
-            </div>
+            <img src="/0/logoinfoeducubapdf.png" alt="InfoEduCubaPDF" class="footer-logo">
             <p>Creado por Andy Victor Góngora Olivarez</p>
             <p>© 2026 InfoEduCubaPDF - Todos los derechos reservados</p>
             <p style="margin-top: 20px; color: var(--primary);">🇨🇺 Información real para cubanos que quieren mejorar su economía 🇨🇺</p>
@@ -702,7 +684,7 @@
     
     <!-- SCRIPTS -->
     <script>
-        // Efecto de escritura MÁS LENTO (typeSpeed: 80, backSpeed: 50)
+        // Efecto de escritura MÁS LENTO
         var typed = new Typed('#typed-text', {
             strings: ['Andy Victor Góngora Olivarez', 'tu guía freelance', 'InfoEduCubaPDF'],
             typeSpeed: 80,
@@ -730,7 +712,6 @@
             }, 16);
         }
         
-        // Iniciar contadores cuando la página cargue
         window.addEventListener('load', function() {
             animateCounter('stat-guias', 12, 2000);
             animateCounter('stat-cursos', 18, 2000);
@@ -778,7 +759,6 @@
     </script>
     
     <style>
-        /* Animación para el efecto de onda */
         @keyframes ripple {
             0% {
                 width: 0;
