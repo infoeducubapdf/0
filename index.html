@@ -61,10 +61,10 @@
             font-weight: 600;
         }
         
-        /* ===== HEADER CON LOGO ===== */
+        /* ===== HEADER CON LOGO Y NOMBRE ===== */
         header {
             background: var(--surface);
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 3px solid var(--primary);
             position: sticky;
             top: 0;
@@ -72,24 +72,64 @@
             backdrop-filter: blur(10px);
         }
         
-        .logo-container {
+        .header-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-nombre {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
         .logo-img {
-            max-width: 100%;
+            max-width: 60px;
             height: auto;
-            max-height: 80px; /* Ajusta según el tamaño de tu logo */
-            width: auto;
-            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .nombre-sitio {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--white), var(--blue), var(--red), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
         }
         
         @media (min-width: 768px) {
             .logo-img {
-                max-height: 100px;
+                max-width: 80px;
             }
+            .nombre-sitio {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
         }
         
         /* ===== ANIMACIONES ===== */
@@ -248,7 +288,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            opacity: 0; /* Se activará con la animación */
+            opacity: 0;
         }
         
         .card::before {
@@ -383,9 +423,8 @@
         }
         
         .footer-logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 20px;
+            max-width: 60px;
+            margin-bottom: 15px;
         }
         
         footer p {
@@ -455,10 +494,15 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo-container animate-fade">
-                <!-- LOGO EN IMAGEN -->
-                <img src="/0/logoinfoeducubapdf.png" alt="InfoEduCubaPDF" class="logo-img">
+        <div class="container header-container">
+            <div class="logo-nombre animate-fade">
+                <img src="/0/logotipoinfoeducubapdf.png" alt="InfoEduCubaPDF" class="logo-img">
+                <span class="nombre-sitio">InfoEduCubaPDF</span>
+            </div>
+            <div class="nav-links">
+                <a href="#guias">Guías</a>
+                <a href="#pagos">Pagos</a>
+                <a href="/0/cursos.html">Cursos</a>
             </div>
         </div>
     </header>
@@ -667,7 +711,8 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <img src="/0/logoinfoeducubapdf.png" alt="InfoEduCubaPDF" class="footer-logo">
+            <img src="/0/logotipoinfoeducubapdf.png" alt="InfoEduCubaPDF" class="footer-logo">
+            <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 10px;">InfoEduCubaPDF</p>
             <p>Creado por Andy Victor Góngora Olivarez</p>
             <p>© 2026 InfoEduCubaPDF - Todos los derechos reservados</p>
             <p style="margin-top: 20px; color: var(--primary);">🇨🇺 Información real para cubanos que quieren mejorar su economía 🇨🇺</p>
@@ -684,7 +729,6 @@
     
     <!-- SCRIPTS -->
     <script>
-        // Efecto de escritura MÁS LENTO
         var typed = new Typed('#typed-text', {
             strings: ['Andy Victor Góngora Olivarez', 'tu guía freelance', 'InfoEduCubaPDF'],
             typeSpeed: 80,
@@ -693,7 +737,6 @@
             backDelay: 2000
         });
         
-        // Contadores
         function animateCounter(elementId, target, duration) {
             const element = document.getElementById(elementId);
             if (!element) return;
@@ -718,7 +761,6 @@
             animateCounter('stat-plataformas', 8, 2000);
         });
         
-        // Botón volver arriba
         window.onscroll = function() {
             const btn = document.getElementById('btn-arriba');
             if (document.documentElement.scrollTop > 300) {
@@ -732,7 +774,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // Efecto de onda en botones
         document.querySelectorAll('.btn, .btn-cursos, .card-link').forEach(button => {
             button.addEventListener('click', function(e) {
                 const x = e.clientX - e.target.offsetLeft;
