@@ -33,6 +33,10 @@
             --text: #e0e0e0;
             --text-dim: #a0a0b0;
             --border: rgba(0, 240, 255, 0.2);
+            --white: #ffffff;
+            --blue: #002a8f;
+            --red: #cf142b;
+            --green: #00b16a;
         }
         
         body {
@@ -52,9 +56,45 @@
             padding: 0 20px;
         }
         
-        h1, h2, h3, .logo, .btn, .btn-cursos {
+        h1, h2, h3, .btn, .btn-cursos {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
+        }
+        
+        /* ===== LOGO CON COLORES PERSONALIZADOS ===== */
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        
+        .logo-info {
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .logo-edu {
+            color: var(--blue);
+            text-shadow: 0 0 10px rgba(0, 42, 143, 0.5);
+        }
+        
+        .logo-cuba {
+            color: var(--red);
+            text-shadow: 0 0 10px rgba(207, 20, 43, 0.5);
+        }
+        
+        .logo-pdf {
+            color: var(--green);
+            text-shadow: 0 0 10px rgba(0, 177, 106, 0.5);
+        }
+        
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
         }
         
         /* ===== ANIMACIONES ===== */
@@ -91,21 +131,6 @@
             backdrop-filter: blur(10px);
         }
         
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-align: center;
-            letter-spacing: -0.5px;
-            text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
-        }
-        
-        @media (min-width: 768px) {
-            .logo {
-                font-size: 3rem;
-            }
-        }
-        
         /* ===== HERO ===== */
         .hero {
             padding: 80px 20px;
@@ -118,6 +143,7 @@
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .hero h1 span {
@@ -199,6 +225,7 @@
             margin-bottom: 50px;
             color: var(--primary);
             text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         @media (min-width: 768px) {
@@ -259,12 +286,6 @@
             transform: translateY(-10px) scale(1.02);
             border-color: var(--primary);
             box-shadow: 0 20px 40px rgba(0, 240, 255, 0.3), 0 0 0 2px rgba(0, 240, 255, 0.1);
-        }
-        
-        .card-icon {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            display: block;
         }
         
         .card i {
@@ -445,7 +466,13 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo animate-fade">InfoEduCubaPDF</div>
+            <!-- LOGO CON COLORES PERSONALIZADOS -->
+            <div class="logo animate-fade">
+                <span class="logo-info">Info</span>
+                <span class="logo-edu">Edu</span>
+                <span class="logo-cuba">Cuba</span>
+                <span class="logo-pdf">PDF</span>
+            </div>
         </div>
     </header>
     
@@ -653,7 +680,12 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 20px;">InfoEduCubaPDF</p>
+            <div class="logo" style="font-size: 1.5rem; margin-bottom: 20px;">
+                <span class="logo-info">Info</span>
+                <span class="logo-edu">Edu</span>
+                <span class="logo-cuba">Cuba</span>
+                <span class="logo-pdf">PDF</span>
+            </div>
             <p>Creado por Andy Victor Góngora Olivarez</p>
             <p>© 2026 InfoEduCubaPDF - Todos los derechos reservados</p>
             <p style="margin-top: 20px; color: var(--primary);">🇨🇺 Información real para cubanos que quieren mejorar su economía 🇨🇺</p>
@@ -670,12 +702,13 @@
     
     <!-- SCRIPTS -->
     <script>
-        // Efecto de escritura
+        // Efecto de escritura MÁS LENTO (typeSpeed: 80, backSpeed: 50)
         var typed = new Typed('#typed-text', {
             strings: ['Andy Victor Góngora Olivarez', 'tu guía freelance', 'InfoEduCubaPDF'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
+            typeSpeed: 80,
+            backSpeed: 50,
+            loop: true,
+            backDelay: 2000
         });
         
         // Contadores
