@@ -2,38 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://infoeducubapdf.github.io/0/</loc>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://infoeducubapdf.github.io/0/cursos.html</loc>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://infoeducubapdf.github.io/0/freelance-general.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://infoeducubapdf.github.io/0/redaccion.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://infoeducubapdf.github.io/0/diseno.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://infoeducubapdf.github.io/0/programacion.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://infoeducubapdf.github.io/0/community-manager.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://infoeducubapdf.github.io/0/tutorias.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://infoeducubapdf.github.io/0/curso-freelance-fundamentos.html</loc>
-    <priority>0.7</priority>
   </url>
 </urlset>
