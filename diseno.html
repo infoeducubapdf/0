@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Freelance - InfoEduCubaPDF</title>
-    <meta name="description" content="Guía completa para trabajar como diseñador freelance desde Cuba: herramientas, plataformas y consejos.">
+    <title>Diseño Freelance - Guía completa | InfoEduCubaPDF</title>
+    <meta name="description" content="Guía completa para trabajar como diseñador freelance desde Cuba. Herramientas gratuitas, proyectos prácticos y consejos para empezar.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
         * {
@@ -20,6 +21,7 @@
         :root {
             --bg: #0a0a0f;
             --surface: #1a1a24;
+            --surface-light: #252532;
             --primary: #00f0ff;
             --secondary: #ff00aa;
             --text: #e0e0e0;
@@ -43,99 +45,163 @@
         header {
             background: var(--surface);
             padding: 20px 0;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 3px solid var(--primary);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(10px);
         }
         
-        .header-content {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 15px;
         }
         
-        .logo a {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .back-link a {
-            color: var(--primary);
-            text-decoration: none;
+        .logo-nombre {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 15px;
         }
         
-        .back-link a:hover {
-            color: var(--secondary);
+        .logo-img {
+            max-width: 60px;
+            height: auto;
+            border-radius: 10px;
         }
         
-        h1 {
+        .nombre-sitio {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--primary);
-            margin: 40px 0 20px;
         }
         
-        h2 {
-            font-size: 1.8rem;
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
             color: var(--primary);
-            margin: 40px 0 20px;
+        }
+        
+        .guia-header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        
+        .guia-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .guia-header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+        
+        .indice {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid var(--border);
+        }
+        
+        .indice h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .indice ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .indice a {
+            color: var(--text-dim);
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .indice a:hover {
+            color: var(--primary);
+        }
+        
+        .seccion {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid var(--border);
+        }
+        
+        .seccion h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
             border-left: 4px solid var(--primary);
             padding-left: 15px;
         }
         
-        h3 {
-            font-size: 1.4rem;
+        .seccion h3 {
             color: var(--primary);
-            margin: 30px 0 15px;
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
         }
         
-        .content {
-            background: var(--surface);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            margin: 30px 0;
-        }
-        
-        p {
-            margin-bottom: 20px;
+        .seccion p {
             color: var(--text-dim);
+            margin-bottom: 20px;
         }
         
-        ul, ol {
+        .seccion ul, .seccion ol {
             margin: 20px 0 20px 30px;
             color: var(--text-dim);
         }
         
-        li {
+        .seccion li {
             margin-bottom: 10px;
         }
         
-        a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            color: var(--secondary);
-        }
-        
-        .highlight {
-            background: rgba(0, 240, 255, 0.1);
-            border-left: 4px solid var(--primary);
+        .herramienta-card {
+            background: var(--surface-light);
+            border-radius: 12px;
             padding: 20px;
-            margin: 30px 0;
-            border-radius: 0 16px 16px 0;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
         }
         
-        .btn {
+        .herramienta-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .proyecto {
+            background: var(--surface-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .btn-volver {
             display: inline-block;
             padding: 12px 30px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -143,106 +209,194 @@
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
-            margin: 20px 0;
+            margin: 40px 0;
             transition: transform 0.3s;
         }
         
-        .btn:hover {
+        .btn-volver:hover {
             transform: scale(1.05);
         }
         
         footer {
             background: var(--surface);
-            padding: 30px 0;
+            padding: 40px 0 20px;
             text-align: center;
-            border-top: 1px solid var(--primary);
+            border-top: 2px solid var(--primary);
             margin-top: 60px;
+        }
+        
+        @media (max-width: 600px) {
+            .logo-img {
+                max-width: 50px;
+            }
+            .nombre-sitio {
+                font-size: 1.2rem;
+            }
+            .guia-header h1 {
+                font-size: 1.8rem;
+            }
+            .seccion h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="/0/index.html">InfoEduCubaPDF</a>
-                </div>
-                <div class="back-link">
-                    <a href="/0/index.html">← Volver al inicio</a>
-                </div>
+        <div class="container header-container">
+            <div class="logo-nombre">
+                <img src="/0/logotipoinfoeducubapdf.png" alt="InfoEduCubaPDF" class="logo-img">
+                <span class="nombre-sitio">InfoEduCubaPDF</span>
+            </div>
+            <div class="nav-links">
+                <a href="/0/index.html">Inicio</a>
+                <a href="/0/cursos.html">Cursos</a>
+                <a href="#herramientas">Herramientas</a>
             </div>
         </div>
     </header>
     
     <main class="container">
-        <h1>Diseño Freelance: Guía completa</h1>
+        <div class="guia-header">
+            <h1>🎨 Diseño Freelance: Guía completa</h1>
+            <p>Aprende a trabajar como diseñador desde Cuba. Herramientas gratuitas, proyectos prácticos y cómo conseguir tus primeros clientes.</p>
+        </div>
         
-        <div class="content">
-            <h2>🎨 ¿Qué hace un diseñador freelance?</h2>
-            <p>Un diseñador freelance crea piezas visuales para clientes: logos, branding, publicaciones para redes sociales, flyers, presentaciones, edición de video, diseño web y más. La creatividad cubana es muy valorada internacionalmente.</p>
-            
-            <div class="highlight">
-                <p style="margin: 0; font-weight: bold;">📌 Dato clave: El diseño es una de las áreas con mayor demanda y mejores pagos dentro del mundo freelance.</p>
+        <div class="indice">
+            <h2>📋 En esta guía:</h2>
+            <ul>
+                <li><a href="#que-es">→ ¿Qué hace un diseñador freelance?</a></li>
+                <li><a href="#ventajas">→ Ventajas para cubanos</a></li>
+                <li><a href="#ganancias">→ ¿Cuánto se puede ganar?</a></li>
+                <li><a href="#herramientas">→ Herramientas gratuitas</a></li>
+                <li><a href="#proyectos">→ Proyectos prácticos</a></li>
+                <li><a href="#clientes">→ Cómo conseguir clientes</a></li>
+                <li><a href="#pagos">→ Métodos de pago</a></li>
+            </ul>
+        </div>
+        
+        <section id="que-es" class="seccion">
+            <h2>🖌️ ¿Qué hace un diseñador freelance?</h2>
+            <p>Un diseñador freelance crea piezas visuales para clientes de todo el mundo. Tu trabajo es hacer que las marcas, productos o ideas se vean atractivas y comuniquen su mensaje de forma efectiva.</p>
+            <p><strong>Servicios que puedes ofrecer:</strong></p>
+            <ul>
+                <li><strong>Logotipos y branding:</strong> Crear la identidad visual completa de una marca.</li>
+                <li><strong>Publicaciones para redes sociales:</strong> Diseños para Instagram, Facebook, TikTok.</li>
+                <li><strong>Flyers, carteles y material impreso:</strong> Para promociones, eventos, etc.</li>
+                <li><strong>Edición de video:</strong> Cortos para YouTube, TikTok, reels de Instagram.</li>
+                <li><strong>Presentaciones profesionales:</strong> PowerPoint, Google Slides, Canva.</li>
+                <li><strong>Diseño web básico:</strong> Maquetación de páginas web.</li>
+            </ul>
+            <div style="background: rgba(0,240,255,0.05); padding: 15px; border-radius: 12px; margin-top: 20px;">
+                <p style="margin: 0; color: var(--primary);">💡 <strong>Dato clave:</strong> La creatividad cubana es muy valorada internacionalmente. Aprovecha tu perspectiva única.</p>
             </div>
-            
+        </section>
+        
+        <section id="ventajas" class="seccion">
             <h2>✅ Ventajas para cubanos</h2>
             <ul>
-                <li><strong>Herramientas gratuitas:</strong> Existen excelentes programas gratuitos como GIMP, Canva, DaVinci Resolve e Inkscape.</li>
+                <li><strong>Herramientas gratuitas:</strong> Existen excelentes programas sin costo como Canva, GIMP, DaVinci Resolve e Inkscape.</li>
                 <li><strong>Portafolio visual:</strong> Puedes mostrar tu trabajo fácilmente en Instagram, Behance o Pinterest.</li>
                 <li><strong>Alta demanda:</strong> Todas las empresas necesitan diseño, desde logos hasta contenido para redes.</li>
-                <li><strong>Trabajo asincrónico:</strong> Puedes entregar por archivo, sin necesidad de estar conectado en tiempo real.</li>
+                <li><strong>Trabajo asincrónico:</strong> Puedes entregar por archivo sin necesidad de estar conectado en tiempo real.</li>
+                <li><strong>Sin título requerido:</strong> Lo que importa es tu portafolio y tus habilidades.</li>
             </ul>
-            
-            <h2>💰 Ganancias estimadas</h2>
+        </section>
+        
+        <section id="ganancias" class="seccion">
+            <h2>💰 ¿Cuánto se puede ganar?</h2>
+            <p>Las tarifas de diseño varían según tu experiencia y el tipo de proyecto. Aquí tienes una referencia realista para empezar:</p>
             <ul>
                 <li><strong>Logo básico:</strong> $25 - $100</li>
-                <li><strong>Pack de posts para redes (5-10 diseños):</strong> $50 - $200</li>
+                <li><strong>Pack de 5-10 posts para redes:</strong> $50 - $200</li>
                 <li><strong>Flyer o cartel:</strong> $20 - $80</li>
                 <li><strong>Edición de video corto (1-3 min):</strong> $30 - $150</li>
-                <li><strong>Diseño web (maquetación):</strong> $100 - $500+</li>
+                <li><strong>Branding completo (logo + guía + redes):</strong> $150 - $500+</li>
             </ul>
-            
+            <p>Estos precios están en dólares. Conviértelos a CUP al cambio actual para tu mercado local, o cobra directamente en divisas.</p>
+        </section>
+        
+        <section id="herramientas" class="seccion">
             <h2>🛠️ Herramientas gratuitas recomendadas</h2>
-            <ul>
-                <li><a href="https://www.canva.com" target="_blank"><strong>Canva</strong></a> - Diseño gráfico online, fácil y con plantillas.</li>
-                <li><a href="https://www.gimp.org" target="_blank"><strong>GIMP</strong></a> - Alternativa gratuita a Photoshop.</li>
-                <li><a href="https://inkscape.org" target="_blank"><strong>Inkscape</strong></a> - Para ilustración vectorial (similar a Illustrator).</li>
-                <li><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank"><strong>DaVinci Resolve</strong></a> - Edición de video profesional gratuita.</li>
-                <li><a href="https://www.figma.com" target="_blank"><strong>Figma</strong></a> - Diseño de interfaces web (gratuito).</li>
-            </ul>
+            <p>No necesitas pagar por software caro. Estas herramientas te permitirán crear trabajos profesionales desde tu computadora o incluso desde el móvil.</p>
             
-            <h2>🌐 Plataformas para encontrar trabajo</h2>
-            <ul>
-                <li><a href="https://www.nexempleo.com" target="_blank"><strong>Nexempleo</strong></a> - Proyectos de diseño para cubanos.</li>
-                <li><a href="https://www.workana.com" target="_blank"><strong>Workana</strong></a> - Muchas ofertas de diseño en español.</li>
-                <li><a href="https://www.fiverr.com" target="_blank"><strong>Fiverr</strong></a> - Ideal para ofrecer servicios de diseño.</li>
-                <li><a href="https://www.behance.net" target="_blank"><strong>Behance</strong></a> - Para mostrar tu portafolio y que te encuentren.</li>
-                <li><a href="https://www.instagram.com" target="_blank"><strong>Instagram</strong></a> - Muestra tu trabajo y capta clientes.</li>
-            </ul>
-            
-            <h2>🚀 Cómo empezar</h2>
-            <ol>
-                <li><strong>Crea un portafolio:</strong> Diseña logos ficticios, reelabora marcas existentes o crea contenido para ti mismo. Sube todo a Behance o Instagram.</li>
-                <li><strong>Elige tu especialidad:</strong> ¿Logos? ¿Redes sociales? ¿Video? Enfocarte te ayuda a cobrar más.</li>
-                <li><strong>Ofrece packs iniciales:</strong> Por ejemplo, "Pack de 5 posts para Instagram" a precio promocional.</li>
-                <li><strong>Regístrate en plataformas:</strong> Empieza por Nexempleo y Workana.</li>
-                <li><strong>Pide referencias:</strong> Un buen trabajo te traerá más clientes.</li>
-            </ol>
-            
-            <div class="highlight">
-                <p style="margin: 0;"><strong>🎯 Consejo:</strong> Aprende a usar bien Canva al principio. Es muy rápido y los resultados son profesionales. Luego ve profundizando en herramientas más complejas.</p>
+            <div class="herramienta-card">
+                <h4>🎨 Canva</h4>
+                <p>La herramienta más fácil y completa para diseño gráfico. Ideal para empezar. Tiene plantillas para todo tipo de proyectos.</p>
+                <a href="https://www.canva.com" target="_blank" style="color: var(--primary);">canva.com →</a>
             </div>
             
+            <div class="herramienta-card">
+                <h4>🖼️ GIMP</h4>
+                <p>Alternativa gratuita a Photoshop. Ideal para edición de fotos, retoques y creación de imágenes complejas.</p>
+                <a href="https://www.gimp.org" target="_blank" style="color: var(--primary);">gimp.org →</a>
+            </div>
+            
+            <div class="herramienta-card">
+                <h4>📐 Inkscape</h4>
+                <p>Para diseño vectorial (logos, ilustraciones). Similar a Adobe Illustrator, pero gratis.</p>
+                <a href="https://inkscape.org" target="_blank" style="color: var(--primary);">inkscape.org →</a>
+            </div>
+            
+            <div class="herramienta-card">
+                <h4>🎬 DaVinci Resolve</h4>
+                <p>Editor de video profesional completamente gratuito. Usado por estudios de cine. Ideal para edición y corrección de color.</p>
+                <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" style="color: var(--primary);">blackmagicdesign.com →</a>
+            </div>
+            
+            <div class="herramienta-card">
+                <h4>📱 CapCut</h4>
+                <p>Editor de video para móvil, muy fácil de usar. Perfecto para editar reels y TikTok.</p>
+                <a href="https://www.capcut.com" target="_blank" style="color: var(--primary);">capcut.com →</a>
+            </div>
+        </section>
+        
+        <section id="proyectos" class="seccion">
+            <h2>📁 Proyectos prácticos para tu portafolio</h2>
+            <p>No necesitas clientes reales para tener un portafolio. Crea estos proyectos como práctica y muestra lo que sabes hacer.</p>
+            
+            <div class="proyecto">
+                <h3>🎯 Proyecto 1: Rediseña un logo</h3>
+                <p>Elige una marca conocida (Cubana de Aviación, una marca de café, etc.) y rediseña su logo. Muestra el antes y después. Explica por qué hiciste los cambios.</p>
+            </div>
+            
+            <div class="proyecto">
+                <h3>📱 Proyecto 2: Pack de redes sociales</h3>
+                <p>Crea 5 publicaciones para una marca ficticia (puede ser tu propio emprendimiento). Incluye post, stories y un reel. Usa Canva o GIMP.</p>
+            </div>
+            
+            <div class="proyecto">
+                <h3>📄 Proyecto 3: Flyer para evento</h3>
+                <p>Diseña un flyer para un concierto, taller o feria. Cuida la jerarquía visual: título, fecha, lugar, información de contacto.</p>
+            </div>
+            
+            <div class="proyecto">
+                <h3>🎬 Proyecto 4: Edita un video</h3>
+                <p>Toma un video de tu celular y edítalo: corta escenas, añade música, títulos y transiciones. Súbelo a Instagram o YouTube.</p>
+            </div>
+        </section>
+        
+        <section id="clientes" class="seccion">
+            <h2>🌐 Cómo conseguir tus primeros clientes</h2>
+            <ul>
+                <li><strong>Emprendedores locales:</strong> Ofrece tus servicios a negocios de tu barrio o municipio. Muchos necesitan logo, flyers o publicaciones.</li>
+                <li><strong>Plataformas de freelance:</strong> Regístrate en <a href="https://www.nexempleo.com" target="_blank" style="color: var(--primary);">Nexempleo</a> (desde Cuba) y <a href="https://www.workana.com" target="_blank" style="color: var(--primary);">Workana</a>.</li>
+                <li><strong>Instagram:</strong> Muestra tu trabajo constantemente. Publica tus proyectos de práctica y usa hashtags como #diseñografico #logodesign.</li>
+                <li><strong>Grupos de Facebook/Telegram:</strong> Únete a comunidades de emprendedores y oferta tus servicios.</li>
+            </ul>
+        </section>
+        
+        <section id="pagos" class="seccion">
             <h2>💰 Métodos de pago recomendados</h2>
             <ul>
-                <li><a href="https://www.tropipay.com" target="_blank"><strong>Tropipay</strong></a> - Ideal para recibir pagos de clientes directos.</li>
-                <li><a href="https://www.airtm.io" target="_blank"><strong>Airtm</strong></a> - Para conectar con PayPal.</li>
-                <li><a href="https://qvapay.com" target="_blank"><strong>QvaPay</strong></a> - Para recibir criptomonedas.</li>
+                <li><a href="https://www.tropipay.com" target="_blank" style="color: var(--primary);"><strong>Tropipay</strong></a> - Ideal para recibir pagos directos de clientes nacionales o internacionales.</li>
+                <li><a href="https://www.airtm.io" target="_blank" style="color: var(--primary);"><strong>Airtm</strong></a> - Para conectar con PayPal, Payoneer y otros sistemas.</li>
+                <li><a href="https://qvapay.com" target="_blank" style="color: var(--primary);"><strong>QvaPay</strong></a> - Para recibir criptomonedas y cambiarlas a CUP o MLC.</li>
             </ul>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="/0/index.html" class="btn">← Volver al inicio</a>
-            </div>
+        </section>
+        
+        <div style="text-align: center;">
+            <a href="/0/index.html" class="btn-volver">← Volver al inicio</a>
         </div>
     </main>
     
