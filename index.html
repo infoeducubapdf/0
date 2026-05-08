@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-<script src="https://speedingdeadlyplays.com/79/98/9b/79989bef4b39a0e49bff5e2d8ddd9393.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InfoEduCubaPDF | Guías Freelance desde Cuba</title>
-    <meta name="description" content="Guías y recursos para generar ingresos por internet desde Cuba. Freelance, plataformas y métodos de pago adaptados a la realidad cubana.">
+    <meta name="description" content="Guías y recursos para generar ingresos por internet desde Cuba. Freelance, plataformas, métodos de pago y trading adaptados a la realidad cubana.">
     
     <!-- Fuentes modernas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +56,7 @@
             padding: 0 20px;
         }
         
-        h1, h2, h3, .btn, .btn-cursos {
+        h1, h2, h3, .logo, .btn, .btn-cursos {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
         }
@@ -89,7 +88,7 @@
         }
         
         .logo-img {
-            max-width: 140px;  /* TAMAÑO GRANDE PARA QUE SE VEA BIEN */
+            max-width: 180px;
             height: auto;
             border-radius: 15px;
             transition: transform 0.3s ease;
@@ -135,7 +134,7 @@
         
         @media (min-width: 768px) {
             .logo-img {
-                max-width: 220px;  /* AÚN MÁS GRANDE EN ESCRITORIO */
+                max-width: 220px;
             }
             .nombre-sitio {
                 font-size: 2.8rem;
@@ -194,7 +193,6 @@
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
-            font-family: 'Space Grotesk', sans-serif;
         }
         
         .hero h1 span {
@@ -276,7 +274,6 @@
             margin-bottom: 50px;
             color: var(--primary);
             text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-            font-family: 'Space Grotesk', sans-serif;
         }
         
         @media (min-width: 768px) {
@@ -531,6 +528,7 @@
                 <a href="#guias">Guías</a>
                 <a href="#pagos">Pagos</a>
                 <a href="/0/cursos.html">Cursos</a>
+                <a href="/0/trading.html">Trading</a>
             </div>
         </div>
     </header>
@@ -748,6 +746,7 @@
                 <a href="#">Inicio</a>
                 <a href="#guias">Guías</a>
                 <a href="#pagos">Pagos</a>
+                <a href="/0/trading.html">Trading</a>
             </div>
         </div>
     </footer>
@@ -757,6 +756,7 @@
     
     <!-- SCRIPTS -->
     <script>
+        // Efecto de escritura
         var typed = new Typed('#typed-text', {
             strings: ['Andy Victor Góngora Olivarez', 'tu guía freelance', 'InfoEduCubaPDF'],
             typeSpeed: 80,
@@ -765,6 +765,7 @@
             backDelay: 2000
         });
         
+        // Contadores
         function animateCounter(elementId, target, duration) {
             const element = document.getElementById(elementId);
             if (!element) return;
@@ -789,6 +790,7 @@
             animateCounter('stat-plataformas', 8, 2000);
         });
         
+        // Botón volver arriba
         window.onscroll = function() {
             const btn = document.getElementById('btn-arriba');
             if (document.documentElement.scrollTop > 300) {
@@ -802,6 +804,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
+        // Efecto de onda en botones
         document.querySelectorAll('.btn, .btn-cursos, .card-link').forEach(button => {
             button.addEventListener('click', function(e) {
                 const x = e.clientX - e.target.offsetLeft;
@@ -841,6 +844,5 @@
             }
         }
     </style>
-<script src="https://speedingdeadlyplays.com/6e/01/72/6e017252e395cfa6c61ce9192e446c69.js"></script>
 </body>
 </html>
